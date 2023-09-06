@@ -26,11 +26,11 @@ public class Bar extends BaseComponent {
         initComponent();
     }
     private void initComponent() {
-        downloadsBar = waitToLoad(DOWNLOADS);
-        documentationBar = waitToLoad(DOCUMENTATION);
-        projectsBar = waitToLoad(PROJECTS);
-        supportBar = waitToLoad(SUPPORT);
-        blogBar = waitToLoad(BLOG);
+        downloadsBar = waitToVisible(DOWNLOADS);
+        documentationBar = waitToVisible(DOCUMENTATION);
+        projectsBar = waitToVisible(PROJECTS);
+        supportBar = waitToVisible(SUPPORT);
+        blogBar = waitToVisible(BLOG);
     }
 
     public void clickOnDownload() {

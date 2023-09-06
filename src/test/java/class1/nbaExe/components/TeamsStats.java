@@ -6,6 +6,12 @@ import org.openqa.selenium.WebElement;
 
 public class TeamsStats extends BaseComponent{
 
+    // Locators
+    private final String FIRST_TEAM_LOCATOR = "(//div[@class = 'StatsTeamsTraditionalTable_teamLogoSpan__1HRTS']//span)[1]";
+    private final String TEAM_NAME_BY_POSITION_LOCATOR = "(//div[@class = 'StatsTeamsTraditionalTable_teamLogoSpan__1HRTS']//span)[%d]";
+    private final String SORT_BY_WINS_LOCATOR = "//th[@field = 'W']";
+    private final String SORT_BY_WIN_RATE_LOCATOR = "//th[@field = 'W_PCT']";
+    private final String SORT_BY_POINTS_LOCATOR = "//th[@field = 'PTS']";
 
     // Web elements
     private WebElement teamName;
@@ -23,32 +29,32 @@ public class TeamsStats extends BaseComponent{
     }
 
     public String getFirstTeam() {
-        By TEAM_NAME = By.xpath("(//div[@class = 'StatsTeamsTraditionalTable_teamLogoSpan__1HRTS']//span)[1]");
-        teamName = waitToLoad(TEAM_NAME);
+        By TEAM_NAME = By.xpath(FIRST_TEAM_LOCATOR);
+        teamName = waitToVisible(TEAM_NAME);
         return teamName.getText();
     }
 
     public String getTeamNameByPosition(int position) {
-        By TEAM_NAME_BY_POSITION = By.xpath(String.format("(//div[@class = 'StatsTeamsTraditionalTable_teamLogoSpan__1HRTS']//span)[%d]",position));
-        teamNameByPosition = waitToLoad(TEAM_NAME_BY_POSITION);
+        By TEAM_NAME_BY_POSITION = By.xpath(String.format(TEAM_NAME_BY_POSITION_LOCATOR,position));
+        teamNameByPosition = waitToVisible(TEAM_NAME_BY_POSITION);
         return teamNameByPosition.getText();
     }
 
     public void sortByWins(){
-        By SORT_BY_WINS = By.xpath("//th[@field = 'W']");
-        sortByWins = waitToLoad(SORT_BY_WINS);
+        By SORT_BY_WINS = By.xpath(SORT_BY_WINS_LOCATOR);
+        sortByWins = waitToVisible(SORT_BY_WINS);
         sortByWins.click();
     }
 
     public void sortByWinRate(){
-        By SORT_BY_WINS_RATE = By.xpath("//th[@field = 'W_PCT']");
-        sortByWinsRate = waitToLoad(SORT_BY_WINS_RATE);
+        By SORT_BY_WINS_RATE = By.xpath(SORT_BY_WIN_RATE_LOCATOR);
+        sortByWinsRate = waitToVisible(SORT_BY_WINS_RATE);
         sortByWinsRate.click();
     }
 
     public void sortByPoints(){
-        By SORT_BY_POINTS = By.xpath("//th[@field = 'PTS']");
-        sortByPoints = waitToLoad(SORT_BY_POINTS);
+        By SORT_BY_POINTS = By.xpath(SORT_BY_POINTS_LOCATOR);
+        sortByPoints = waitToVisible(SORT_BY_POINTS);
         sortByPoints.click();
     }
 

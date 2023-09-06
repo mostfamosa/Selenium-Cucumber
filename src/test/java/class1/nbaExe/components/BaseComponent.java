@@ -16,7 +16,7 @@ public class BaseComponent {
     }
 
     //wait the element to be found
-    public WebElement waitToLoad(By locator) {
+    public WebElement waitToVisible(By locator) {
         try {
             WebDriverWait wait = new WebDriverWait(driver, 20);
             return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
@@ -27,27 +27,5 @@ public class BaseComponent {
         }
     }
 
-    public Boolean waitToDisappear(By locator) {
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, 20);
-            return wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
-        } catch (NoSuchElementException e) {
-            throw new NoSuchElementException("NoSuchElementException: " + e.getMessage());
-        } catch (TimeoutException e) {
-            throw new TimeoutException("TimeoutException: " + e.getMessage());
-        }
-    }
-
-    //wait the element to be clicked
-    public WebElement waitToClick(By locator) {
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, 20);
-            return wait.until(ExpectedConditions.elementToBeClickable(locator));
-        } catch (NoSuchElementException e) {
-            throw new NoSuchElementException("NoSuchElementException: " + e.getMessage());
-        } catch (TimeoutException e) {
-            throw new TimeoutException("TimeoutException: " + e.getMessage());
-        }
-    }
 
 }

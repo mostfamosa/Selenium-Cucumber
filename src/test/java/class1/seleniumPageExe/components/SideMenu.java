@@ -26,11 +26,11 @@ public class SideMenu extends BaseComponent {
     }
 
     private void initComponent() {
-        overView = waitToLoad(OVERVIEW);
-        webDriver = waitToLoad(WEB_DRIVER);
-        grid = waitToLoad(GRID);
-        driverServer = waitToLoad(IE_DRIVER_SERVER);
-        ide = waitToLoad(IDE);
+        overView = waitToVisible(OVERVIEW);
+        webDriver = waitToVisible(WEB_DRIVER);
+        grid = waitToVisible(GRID);
+        driverServer = waitToVisible(IE_DRIVER_SERVER);
+        ide = waitToVisible(IDE);
     }
 
     public void clickOnOverview() {

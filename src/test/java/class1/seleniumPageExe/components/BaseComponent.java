@@ -16,7 +16,7 @@ public class BaseComponent {
     }
 
     //wait the element to be found
-    public WebElement waitToLoad(By locator) {
+    public WebElement waitToVisible(By locator) {
         try {
             WebDriverWait wait = new WebDriverWait(driver, 10);
             return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
