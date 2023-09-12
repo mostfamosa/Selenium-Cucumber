@@ -13,8 +13,10 @@ import org.openqa.selenium.WebDriver;
 public class PlayersStatSteps {
     private WebDriver driver;
     private StatsPage statsPage;
+    private TestContext testContext;
 
-    public PlayersStatSteps(TestContext testContext) {
+    public PlayersStatSteps(TestContext context) {
+        this.testContext = context;
         // Get the WebDriver instance from the Test Context
         driver = testContext.getDriver();
     }

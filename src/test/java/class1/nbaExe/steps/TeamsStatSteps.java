@@ -18,8 +18,9 @@ import java.util.Objects;
 public class TeamsStatSteps {
     private WebDriver driver;
     private StatsPage statsPage;
-
-    public TeamsStatSteps(TestContext testContext) {
+    private TestContext testContext;
+    public TeamsStatSteps(TestContext context) {
+        this.testContext = context;
         // Get the WebDriver instance from the Test Context
         driver = testContext.getDriver();
     }

@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 import static class1.nbaExe.utilities.WebDriverManager.takeScreenshot;
 
 public class MyHooks {
-    private TestContext testContext;
+    private static TestContext testContext;
 
     public MyHooks(TestContext testContext) {
         this.testContext = testContext;
@@ -28,7 +28,9 @@ public class MyHooks {
             takeScreenshot(scenario.getName());
 
         }
+        testContext = null;
         // Close the WebDriver (close browser)
         WebDriverManager.quitDriver();
+
     }
 }
